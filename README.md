@@ -1,4 +1,4 @@
-<h1>This is a Interview Simulator</h1>
+<h1>This is a Study Abroad Interview Simulator</h1>
 
 1. Front-End runs on http://localhost:5173
 2. Back-End runs on http://localhost:3000
