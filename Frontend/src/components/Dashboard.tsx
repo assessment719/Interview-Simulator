@@ -15,12 +15,6 @@ const Dashboard = () => {
     setRecentScores(updatedScores);
   }, []);
 
-  const mockData = {
-    recentScores: recentScores,
-    strengths: ['Communication Skills', 'Academic Knowledge', 'Program Understanding'],
-    weaknesses: ['Financial Documentation', 'Future Plans Clarity'],
-  };
-
   return (
     <div className="max-w-6xl mx-auto p-6 space-y-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -63,7 +57,7 @@ const Dashboard = () => {
         <h3 className="text-xl font-semibold mb-4">Progress Overview</h3>
         <div className="h-[300px]">
           <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={mockData.recentScores}>
+            <LineChart data={recentScores}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="session" />
               <YAxis />
