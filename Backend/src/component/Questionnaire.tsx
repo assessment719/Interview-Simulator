@@ -1,6 +1,7 @@
 import { LucideMessageCircleQuestion } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
+import { Question } from '../../../Frontend/src/Types/index';
 import { loaderAtom } from '../Atoms/loaderAtom';
 import { useSetRecoilState } from 'recoil';
 
@@ -10,15 +11,6 @@ const QuestionCentre: React.FC = () => {
   const [difficulty, setDifficulty] = useState('all');
   const [expectedKeywords, setExpectedKeywords] = useState('');
   const [evaluationPrompt, setEvaluationPrompt] = useState('');
-
-  interface Question {
-    id: number;
-    question: string;
-    category: string;
-    difficulty: string;
-    expectedKeywords: string;
-    evaluationPrompt: string;
-  }
 
   const [interviewQuestions, setInterviewQuestions] = useState<Question[]>([]);
   const [numberOfQuestions, setNumberOfQuestions] = useState(0);
@@ -88,7 +80,7 @@ const QuestionCentre: React.FC = () => {
         },
         body: JSON.stringify({ id: numberOfUpdatingQuestions, question, category, difficulty, expectedKeywords, evaluationPrompt }),
       })
-        .then((res) => {
+        .then(async (res) =>  {
           if (!res.ok) {
             throw new Error("Failed to fetch data");
           }
@@ -111,7 +103,7 @@ const QuestionCentre: React.FC = () => {
       },
       body: JSON.stringify({ id: idx }),
     })
-      .then((res) => {
+      .then(async (res) => {
         if (!res.ok) {
           throw new Error("Failed to fetch data");
         }
@@ -121,7 +113,7 @@ const QuestionCentre: React.FC = () => {
     fetch("http://localhost:2000/questions/update/ids", {
       method: "PUT"
     })
-      .then((res) => {
+      .then(async (res) => {
         if (!res.ok) {
           throw new Error("Failed to fetch data");
         }
@@ -142,7 +134,7 @@ const QuestionCentre: React.FC = () => {
         },
         body: JSON.stringify({ id: newId, question, category, difficulty, expectedKeywords, evaluationPrompt }),
       })
-        .then((res) => {
+        .then(async (res) => {
           if (!res.ok) {
             throw new Error("Failed to fetch data");
           }

@@ -1,4 +1,3 @@
-
 const LoaderComponent = () => {
 
     return (
