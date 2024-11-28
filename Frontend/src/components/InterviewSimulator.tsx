@@ -3,6 +3,7 @@ import { Mic, MicOff, User2, AlertCircle, Loader2 } from 'lucide-react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import { motion } from 'framer-motion';
 import { analyzeResponse } from '../lib/openai';
+import { Question } from '../Types/index';
 
 const InterviewSimulator: React.FC = () => {
   const [isListening, setIsListening] = useState(false);
@@ -39,15 +40,6 @@ const InterviewSimulator: React.FC = () => {
         });
     }
   }, []);
-
-  interface Question {
-    id: number;
-    question: string;
-    category: string;
-    difficulty: string;
-    expectedKeywords: string;
-    evaluationPrompt: string;
-  }
 
   useEffect(() => {
     fetch("http://localhost:2000/questions")
