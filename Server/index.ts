@@ -19,6 +19,8 @@ app.use("/questions/add", addRouter);
 app.use("/questions/update", updateRouter);
 app.use("/questions/delete", deleteRouter);
 
+console.log(process.env.MONGODB_URL);
+
 async function main() {
     await mongoose.connect(`${process.env.MONGODB_URL}`);
     console.log("Connected to MongoDB");
