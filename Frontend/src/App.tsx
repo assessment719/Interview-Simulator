@@ -38,7 +38,7 @@ function App() {
                 value={id}
                 className={`
                   flex-1 px-4 py-2 flex items-center justify-center space-x-2 
-                  rounded-lg transition-colors duration-200
+                  rounded-lg transition-colors duration-200 cursor-pointer
                   ${activeTab === id
                     ? 'bg-blue-500 text-white'
                     : 'hover:bg-gray-100'
