@@ -1,27 +1,24 @@
-import { Book, Video, FileText, Download } from 'lucide-react';
+import { FileText, Download } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const resources = [
   {
-    title: "USA Student Visa Interview Guide",
+    title: "Student Visa Interview Guide",
     type: "document",
-    category: "Visa Interview",
-    downloadUrl: "https://drive.usercontent.google.com/u/0/uc?id=19MvFQE4bC3Oy4MUbVjPb1i6zLk0gismz&export=download",
-    icon: FileText,
+    category: "Interview Guide",
+    downloadUrl: "https://drive.usercontent.google.com/u/0/uc?id=1SmZsunpAdWJnNZ8JXqk-Hd6VVftXUMWL&export=download"
   },
   {
-    title: "Common Credibility Questions",
+    title: "Common Credibility Questions and Answers",
     type: "video",
     category: "Preparation",
-    downloadUrl: "https://drive.usercontent.google.com/u/0/uc?id=19MvFQE4bC3Oy4MUbVjPb1i6zLk0gismz&export=download",
-    icon: Video,
+    downloadUrl: "https://drive.usercontent.google.com/u/0/uc?id=19MvFQE4bC3Oy4MUbVjPb1i6zLk0gismz&export=download"
   },
   {
-    title: "Financial Documentation Checklist",
+    title: "Financial Documentation Checklist and Guide",
     type: "document",
     category: "Documentation",
-    downloadUrl: "https://drive.usercontent.google.com/u/0/uc?id=19MvFQE4bC3Oy4MUbVjPb1i6zLk0gismz&export=download",
-    icon: Book,
+    downloadUrl: "https://drive.usercontent.google.com/u/0/uc?id=1009uzjvQ01z7v6OOok4SlEp2ebB0Xgo_&export=download"
   },
 ];
 
@@ -39,7 +36,7 @@ const ResourceCenter = () => {
           >
             <div className="flex items-start space-x-4">
               <div className="p-3 bg-blue-100 rounded-lg">
-                <resource.icon className="w-6 h-6 text-blue-600" />
+                <FileText className="w-6 h-6 text-blue-600" />
               </div>
               <div className="flex-1">
                 <h3 className="font-semibold text-lg mb-2">{resource.title}</h3>
