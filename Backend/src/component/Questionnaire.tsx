@@ -80,7 +80,7 @@ const QuestionCentre: React.FC = () => {
         },
         body: JSON.stringify({ id: numberOfUpdatingQuestions, question, category, difficulty, expectedKeywords, evaluationPrompt }),
       })
-        .then(async (res) =>  {
+        .then(async (res) => {
           if (!res.ok) {
             throw new Error("Failed to fetch data");
           }
@@ -195,12 +195,12 @@ const QuestionCentre: React.FC = () => {
       <div ref={inputSectionRef} className="mt-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl p-8 text-white">
         <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mb-4'>
           <div className="mb-4 col-span-1 md:col-span-2">
-            <label htmlFor="universityName" className="block font-bold text-xl text-white mb-1">
+            <label htmlFor="question" className="block font-bold text-xl text-white mb-1">
               Question:
             </label>
             <input
               type="text"
-              id="questionID"
+              id="question"
               value={question}
               onChange={(e) => setQuestion(e.target.value)}
               placeholder="Enter Question"
@@ -209,12 +209,12 @@ const QuestionCentre: React.FC = () => {
           </div>
 
           <div className="mb-4">
-            <label htmlFor="courseName" className="block font-bold text-xl text-white mb-1">
+            <label htmlFor="category" className="block font-bold text-xl text-white mb-1">
               Category Of The Question:
             </label>
             <input
               type="text"
-              id="categoryID"
+              id="category"
               value={category}
               onChange={(e) => setCategory(e.target.value)}
               placeholder="Enter Category Of The Question"
@@ -223,10 +223,11 @@ const QuestionCentre: React.FC = () => {
           </div>
 
           <div className="mb-4">
-            <label htmlFor="intakeMonth" className="block font-bold text-xl text-white mb-1">
+            <label htmlFor="difficulty" className="block font-bold text-xl text-white mb-1">
               Difficulty Level:
             </label>
             <select
+              id="difficulty"
               value={difficulty}
               onChange={e => setDifficulty(e.target.value)}
               className="w-full border border-black text-black rounded-lg h-10"
@@ -238,7 +239,7 @@ const QuestionCentre: React.FC = () => {
             </select>
           </div>
           <div className="mb-4">
-            <label htmlFor="intakeMonth" className="block font-bold text-xl text-white mb-1">
+            <label htmlFor="expectedKeywordsID" className="block font-bold text-xl text-white mb-1">
               Expected Keywords:
             </label>
             <input
@@ -251,7 +252,7 @@ const QuestionCentre: React.FC = () => {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="intakeMonth" className="block font-bold text-xl text-white mb-1">
+            <label htmlFor="evaluationPromptID" className="block font-bold text-xl text-white mb-1">
               Evaluation Prompt:
             </label>
             <input
